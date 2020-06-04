@@ -7,25 +7,25 @@
     <form> 
         <input class="firstButton" type="button" value="Añadir tarea">
     </form>
-    <ol type="i">
-        <li>toto</li>
+    <ol id="tareaList" type="i">
+        <li><input id="btn1" class="tareaButton" type="button" value=""></li>
         <li>truc</li>
         <li>bidule</li>
       </ol>
     <!-- The Modal -->
     <div id="myModal" class="modal">
 
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <p>Introducir un nombre de tarea :</p>
-      <input type="text" class="textInput" id="name" name="name" required
-       minlength="0" maxlength="20" size="10">
-      <div class="blockButton">
-         <input class="popUpButton" type="button" value="Guardar">
-         <input class="popUpButton" type="button" value="Cancelar">
-      </div>
-    </div>
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Introducir un nombre de tarea :</p>
+            <input type="text" class="textInput" id="name" name="name" required
+            minlength="0" maxlength="20" size="10">
+            <div class="blockButton">
+                <input id="btnAccept" class="popUpButton" type="button" value="Guardar">
+                <input id="btnCancel" class="popUpButton" type="button" value="Cancelar">
+            </div>
+        </div>
   
     </div>
 </html>
@@ -33,15 +33,20 @@
 
 <script type="text/javascript">
 var btn = document.querySelector('input');
+var tareaList = document.getElementById("tareaList");
 var txt = document.querySelector('p');
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
+var button;
 
-//btnYes.addEventListener('click', updateBtn);
-/*
-function updateBtn() {  
-    //modal.style.display = "block";
-}*/
+btnAccept.addEventListener('click', updateBtn);
+
+function updateBtn() { 
+    button = tareaList.createElement("p");
+    modal.style.display = "none";
+    tareaList.appendChild(button);
+
+}
 btn.onclick = function() {
     modal.style.display = "block";
 }

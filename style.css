@@ -5,10 +5,9 @@ html { /* pagina html */
     padding: 0;
     background-size: cover;
 }
-form { /* top part*/
-    /* background-color: #886b9c;*/
+ol {
+    text-align: center;
 }
-
 .firstButton { /* title */
     margin-top: 1cm;
     margin-bottom: 1cm;
@@ -22,9 +21,15 @@ form { /* top part*/
     border-radius: 3px;
     cursor: pointer; 
     box-shadow: 0 8px 16px 0 grey;
-    text-decoration: none;
-  
+    text-decoration: none; 
 }
+
+form { /* top part*/
+    background-color: #886b9c67;
+    margin: 1cm; 
+}
+
+
 .blockButton {
     text-align: center;
 }
