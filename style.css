@@ -1,15 +1,29 @@
+html { /* pagina html */
+    background-image: url('fondCSS.jpg');
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+}
 form { /* top part*/
-    background-color: #886b9c;
+    /* background-color: #886b9c;*/
 }
 
 .firstButton { /* title */
     margin-top: 1cm;
     margin-bottom: 1cm;
-    background-clip: text;
-    -webkit-background-clip: text;
     font-size: 250%;
     margin-left : 7cm;
-    width: 60%; 
+    width: 60%;
+    background-color: rgb(123, 62, 131);
+    Color:white;
+    font-weight: bold;
+    padding: 10px 40px;
+    border-radius: 3px;
+    cursor: pointer; 
+    box-shadow: 0 8px 16px 0 grey;
+    text-decoration: none;
+  
 }
 .blockButton {
     text-align: center;

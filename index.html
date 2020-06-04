@@ -37,12 +37,14 @@ var txt = document.querySelector('p');
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 
-btn.addEventListener('click', updateBtn);
-
+//btnYes.addEventListener('click', updateBtn);
+/*
 function updateBtn() {  
+    //modal.style.display = "block";
+}*/
+btn.onclick = function() {
     modal.style.display = "block";
 }
-
 span.onclick = function() {
   modal.style.display = "none";
 }
