@@ -5,8 +5,12 @@ html { /* pagina html */
     padding: 0;
     background-size: cover;
 }
+<<<<<<< HEAD
 
 ol {
+=======
+dt {
+>>>>>>> 48739210c2f058cd38f60957dfcb5b9166deb86e
     text-align: center;
 }
 
@@ -14,7 +18,7 @@ ol {
     margin-top: 1cm;
     margin-bottom: 1cm;
     font-size: 250%;
-    margin-left : 7cm;
+    /*margin-left : 7cm;*/
     width: 60%;
     background-color: rgb(123, 62, 131);
     Color:white;
@@ -24,10 +28,12 @@ ol {
     cursor: pointer; 
     box-shadow: 0 8px 16px 0 grey;
     text-decoration: none; 
+    text-align: center;
 }
 
 form { /* top part*/
     background-color: #886b9c67;
+    text-align: center;
     margin: 1cm; 
 }
 
