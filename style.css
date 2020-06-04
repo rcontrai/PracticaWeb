@@ -1,8 +1,10 @@
 form { /* top part*/
-    background-color: #25003e;
+    background-color: #886b9c;
 }
 
 .firstButton { /* title */
+    margin-top: 1cm;
+    margin-bottom: 1cm;
     background-clip: text;
     -webkit-background-clip: text;
     font-size: 250%;
