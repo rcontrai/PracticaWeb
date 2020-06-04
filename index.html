@@ -2,15 +2,30 @@
 <html>
   <head>
     <title>This is the title of the webpage!</title>
-    <script src="script.js"></script>
   </head>
-  <body>
-    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
     <form> 
         <input type="button" value="Démarrer la machine">
     </form>
       <p>La machine est arrêtée.</p>
-  </body>
+  
   
 </html>
+
+
+<script type="text/javascript">
+var btn = document.querySelector('input');
+var txt = document.querySelector('p');
+
+btn.addEventListener('click', updateBtn);
+
+function updateBtn() {
+  if (btn.value === 'Démarrer la machine') {
+    btn.value = 'Arrêter la machine';
+    txt.textContent = 'La machine est démarrée !';
+  } else {
+    btn.value = 'Démarrer la machine';
+    txt.textContent = 'La machine est arrêtée.';
+  }
+}
+</script>
 
