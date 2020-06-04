@@ -1,9 +1,8 @@
 input { /* title */
     background-clip: text;
     -webkit-background-clip: text;
-    text-align: center;
-    font-size: 550%;
-    margin-top: 5vw;
+    font-size: 750%;
+    margin-left : 7cm; 
 }
 /* The Modal (background) */
 .modal {
