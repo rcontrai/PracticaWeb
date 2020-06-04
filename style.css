@@ -5,15 +5,19 @@
     margin-left : 7cm;
     width: 60%; 
 }
+.blockButton {
+    text-align: center;
+}
 .popUpButton {
     font-size: 50%;
-    width: 50%; 
+    width: 47%; 
     margin: 1%;
 }
 .textInput {
+    text-align: center;
     width: 100%;
     padding: 0%; 
-    margin: 1%;
+    margin: 0%;
 }
 /* The Modal (background) */
 .modal {
