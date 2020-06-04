@@ -6,16 +6,16 @@ html { /* pagina html */
     background-size: cover;
 }
 
-
-dt {
+form { /* top part*/
+    background-color: #886b9c67;
     text-align: center;
+    margin: 1cm; 
 }
 
 .firstButton { /* title */
     margin-top: 1cm;
     margin-bottom: 1cm;
     font-size: 250%;
-    /*margin-left : 7cm;*/
     width: 60%;
     background-color: rgb(123, 62, 131);
     Color:white;
@@ -28,19 +28,19 @@ dt {
     text-align: center;
 }
 
-form { /* top part*/
-    background-color: #886b9c67;
+dt {
     text-align: center;
-    margin: 1cm; 
+    background-color: #5a8f5f77;
+    margin-left: 1cm;
+    margin-right: 1cm; 
 }
 
 .tareaButton {
     margin-top: 0.5cm;
     margin-bottom: 0.5cm;
     font-size: 250%;
-    /*margin-left : 7cm;*/
     width: 50%;
-    background-color: rgb(60, 125, 60);
+    background-color: rgb(68, 127, 60);
     Color:white;
     font-weight: bold;
     padding: 10px 40px;
