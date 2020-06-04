@@ -5,7 +5,7 @@
     <link type="text/css" rel="stylesheet" href="style.css">
   </head>
     <form> 
-        <input type="button" value="Añadir tarea">
+        <input class="firstButton" type="button" value="Añadir tarea">
     </form>
     <ol type="i">
         <li>toto</li>
@@ -18,7 +18,13 @@
     <!-- Modal content -->
     <div class="modal-content">
       <span class="close">&times;</span>
-      <p>Some text in the Modal..</p>
+      <p>Introducir un nombre de tarea :</p>
+      <input type="text" class="textInput" id="name" name="name" required
+       minlength="0" maxlength="20" size="10">
+      <div>
+         <input class="popUpButton" type="button" value="Guardar">
+         <input class="popUpButton" type="button" value="Cancelar">
+      </div>
     </div>
   
     </div>

@@ -2,11 +2,22 @@ form { /* top part*/
     background-color: #25003e;
 }
 
-input { /* title */
+.firstButton { /* title */
     background-clip: text;
     -webkit-background-clip: text;
-    font-size: 750%;
-    margin-left : 7cm; 
+    font-size: 250%;
+    margin-left : 7cm;
+    width: 60%; 
+}
+.popUpButton {
+    font-size: 50%;
+    width: 50%; 
+    margin: 1%;
+}
+.textInput {
+    width: 100%;
+    padding: 0%; 
+    margin: 1%;
 }
 /* The Modal (background) */
 .modal {
@@ -28,7 +39,7 @@ input { /* title */
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 60%; /* Could be more or less, depending on screen size */
   }
   
   /* The Close Button */
