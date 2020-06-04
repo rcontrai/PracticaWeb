@@ -5,14 +5,14 @@ html { /* pagina html */
     padding: 0;
     background-size: cover;
 }
-ol {
+dt {
     text-align: center;
 }
 .firstButton { /* title */
     margin-top: 1cm;
     margin-bottom: 1cm;
     font-size: 250%;
-    margin-left : 7cm;
+    /*margin-left : 7cm;*/
     width: 60%;
     background-color: rgb(123, 62, 131);
     Color:white;
@@ -22,10 +22,12 @@ ol {
     cursor: pointer; 
     box-shadow: 0 8px 16px 0 grey;
     text-decoration: none; 
+    text-align: center;
 }
 
 form { /* top part*/
     background-color: #886b9c67;
+    text-align: center;
     margin: 1cm; 
 }
 

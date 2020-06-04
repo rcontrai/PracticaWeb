@@ -7,11 +7,11 @@
     <form> 
         <input class="firstButton" type="button" value="Añadir tarea">
     </form>
-    <ol id="tareaList" type="i">
-        <li><input id="btn1" class="tareaButton" type="button" value=""></li>
-        <li>truc</li>
-        <li>bidule</li>
-      </ol>
+    <dl id="tareaList" type="i">
+        <dt><input id="btn1" class="tareaButton" type="button" value=""></dt>
+        <dt>truc</dt>
+        <dt>bidule</dt>
+      </dl>
     <!-- The Modal -->
     <div id="myModal" class="modal">
 
@@ -39,14 +39,30 @@ var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 var button;
 
-btnAccept.addEventListener('click', updateBtn);
-
+/*btnAccept.addEventListener('click', updateBtn);*/
+btnAccept.addEventListener('click', addElement);
 function updateBtn() { 
-    button = tareaList.createElement("p");
+    //button = tareaList.createElement("p");
+    //tareaList.appendChild(button);
+    
+    button = tareaList.createElement("tareaButton",input, id="btn1", type="button", value="");
+    //tareaList.body.appendChild(button);
     modal.style.display = "none";
-    tareaList.appendChild(button);
-
 }
+
+function addElement () {
+  // crée un nouvel élément div
+  var newDiv = document.createElement("div");
+  // et lui donne un peu de contenu
+  var newContent = document.createTextNode('Hi there and greetings!');
+  // ajoute le nœud texte au nouveau div créé
+  newDiv.appendChild(newContent);
+  
+  // ajoute le nouvel élément créé et son contenu dans le DOM
+  var currentDiv = document.getElementById('div1');
+  document.body.insertBefore(newDiv, currentDiv);
+}
+
 btn.onclick = function() {
     modal.style.display = "block";
 }
