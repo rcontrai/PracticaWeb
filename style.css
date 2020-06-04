@@ -1,3 +1,7 @@
+form { /* top part*/
+    background-color: #25003e;
+}
+
 .firstButton { /* title */
     background-clip: text;
     -webkit-background-clip: text;
