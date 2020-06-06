@@ -1,0 +1,13 @@
+{
+  "short_name": "TaskEdit",
+  "name": "Task Editor",
+  "description": "Create and edit tasks",
+  "icons": [ ],
+  "start_url": "/index.html",
+  "background_color": "#D27A64",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#D27A64",
+  "shortcuts": []
+}
+
