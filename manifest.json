@@ -9,15 +9,15 @@
       "sizes": "192x192"
     },
     {
-      "src": "PracticaWeb/images/icons-512.png",
+      "src": "/images/icons-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": "PracticaWeb/index.html",
+  "start_url": "/index.html",
   "background_color": "#D27A64",
   "display": "standalone",
-  "scope": "PracticaWeb/",
+  "scope": "/",
   "theme_color": "#D27A64",
   "shortcuts": []
 }
