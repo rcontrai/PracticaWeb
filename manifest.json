@@ -14,7 +14,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/",
+  "start_url": "/PracticaWeb",
   "background_color": "#D27A64",
   "display": "standalone",
   "scope": "/",
