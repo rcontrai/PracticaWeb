@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
     <link type="text/css" rel="stylesheet" href="style.css">
+    <script>
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('sw.js').then(reg => {
+                  console.log('service worker registered succesfully:', reg)
+              }, function (err) {
+                  console.log('service worker failed to load:', err)
+              })
+          })
+      }
+    </script>
   </head>
     <form> 
         <input class="firstButton" type="button" value="Añadir tarea">
