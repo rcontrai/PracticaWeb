@@ -17,7 +17,7 @@
   "start_url": "/PracticaWeb",
   "background_color": "#D27A64",
   "display": "standalone",
-  "scope": "/",
+  "scope": "/PracticaWeb",
   "theme_color": "#D27A64",
   "shortcuts": []
 }
