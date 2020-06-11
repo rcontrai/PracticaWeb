@@ -9,14 +9,18 @@ html { /* pagina html */
 form { /* top part*/
     background-color: #886b9c67;
     text-align: center;
-    margin: 1cm; 
+    margin-top: 1cm;
+    margin-bottom: 1cm;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .firstButton { /* title */
     margin-top: 1cm;
     margin-bottom: 1cm;
     font-size: 250%;
-    width: 60%;
+    width: 80%;
+    min-width: 272px;
     background-color: rgb(123, 62, 131);
     Color:white;
     font-weight: bold;
@@ -31,8 +35,9 @@ form { /* top part*/
 dt {
     text-align: center;
     background-color: #5a8f5f77;
-    margin-left: 1cm;
-    margin-right: 1cm; 
+    margin-left: 5%;
+    margin-right: 5%;
+    min-width: 90%;
 }
 
 .tareaButton {
@@ -40,6 +45,7 @@ dt {
     margin-bottom: 0.5cm;
     font-size: 200%;
     width: 45%;
+    min-width: 272px;
     background-color: rgb(68, 127, 60);
     Color:white;
     font-weight: bold;
