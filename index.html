@@ -28,9 +28,11 @@
         <input class="firstButton" type="button" value="Añadir tarea">
     </form>
     <dl id="tareaList">
+        <!--
         <dt><input id="btn1" class="tareaButton" type="button" value="tarea 1"></dt>
         <dt><input id="btn2" class="tareaButton" type="button" value="tarea 2"></dt>
         <dt><input id="btn3" class="tareaButton" type="button" value="tarea 3"></dt>
+        -->
         <dt id="dtID"></dt>
       </dl>
     <!-- The Modal -->
@@ -53,7 +55,26 @@
 
 
 <script type="text/javascript">
-var lastId = 3;
+var lastId = 0;
+
+if (localStorage.getItem('lastId') == null) {
+  //The first time the page is visited
+  console.log("creating default tasks");
+  addTask("tarea 1");
+  addTask("tarea 2");
+  addTask("tarea 3");
+} else {
+  //The next times the page is visited
+  console.log("reloading previously created tasks");
+  var maxId = localStorage.getItem('lastId');
+  for (i=1; i<=maxId; i++) {
+    addTask(localStorage.getItem('btn' + i));
+    //addTask increments lastId
+    //addTask handles when the key-value pair is not defined
+  }
+  // Post condition : lastId = maxId
+}
+
 
 var modal = document.getElementById("myModal");
 btnAccept.addEventListener('click', addElement);
@@ -119,19 +140,30 @@ function cancel() {
 }
 function addElement () {
   if(document.getElementById("name").value != "") {
+    addTask(document.getElementById("name").value);
+    document.getElementById("name").value = null;
+    modal.style.display = "none";
+  }
+}
+
+//adds a task with content as its content text
+//increments lastId when doing so
+//does nothing if content is empty or null
+function addTask (content) {
+  if((content != "") && content != null) {
     var newDT = document.createElement("dt");
     var newButton = document.createElement("button");
-    var newContent = document.createTextNode(document.getElementById("name").value);
+    var newContent = document.createTextNode(content);
     newButton.className = "tareaButton" ;
     lastId ++;
     newButton.id = "btn" + lastId;
-    console.log(lastId);
+    localStorage.setItem('lastId', lastId);
+    localStorage.setItem(newButton.id, content);
+    console.log("created element n°" + lastId);
     newButton.appendChild(newContent);
     newDT.appendChild(newButton);
     var parentDiv = document.getElementById('dtID').parentNode;
     parentDiv.insertBefore(newDT, document.getElementById('dtID'));
-    document.getElementById("name").value = null;
-    modal.style.display = "none";
   }
 }
 
