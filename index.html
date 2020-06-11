@@ -62,18 +62,34 @@ btn1.addEventListener('click', updateButton);
 btn2.addEventListener('click', updateButton);
 btn3.addEventListener('click', updateButton);
 
-function guardar(id) {
+function guardar() { //marche que pour le premier button
+  var node = document.getElementsByClassName("editButton")[1].parentElement.parentElement;
+  //if (node.parentNode) {
+  //node.firstChild.value;
+  node.firstChild.type = "button";
+  //node.firstChild.nextSibling.removeChild();
+  //var d = document.getElementById("top");
+  var node_nested = document.getElementById("btn1_ol");
+  var throwawayNode = node.removeChild(node_nested);
 
 }
-function eliminar(id) {
-
+function eliminar() { //marche seulement si un seul block est ouvert.
+  var node = document.getElementsByClassName("editButton")[1].parentElement.parentElement;
+  if (node.parentNode) {
+  node.parentNode.removeChild(node);
+}
 
 }
-function cancelar() {
+function cancelar() { //marche pour le 1
+  //console.log(document.getElementsByClassName("editButton")[2].parentElement.parentElement);
   console.log("hey");
-  //document.getElementById(id).type = "button";
-  
-  //document.getElementById(id).type = "button";
+
+  console.log(document.getElementById("btn1_3").parentNode.value);
+  console.log(document.getElementById("btn1").value); // = document.getElementById(this.id).nextSibling;
+
+  document.getElementById("btn1").value = document.getElementById("btn1_3").parentNode.value;
+
+  guardar();
 }
 
 
@@ -89,21 +105,18 @@ function updateButton(){
     newButton1.className = "editButton" ;
     newButton1.id = this.id + "_1";
     newButton1.appendChild(newContent);
-    newButton1.addEventListener('click',guardar(this.id));
 
     var newButton2 = document.createElement("button");
     var newContent = document.createTextNode("Eliminar");
     newButton2.className = "editButton" ;
     newButton2.id = this.id + "_2";
     newButton2.appendChild(newContent);
-    newButton2.addEventListener('click',eliminar(this.id));
 
     var newButton3 = document.createElement("button");
     var newContent = document.createTextNode("Cancelar");
     newButton3.className = "editButton" ;
     newButton3.id = this.id + "_3";
     newButton3.appendChild(newContent);
-    //newButton3.addEventListener('click',cancelar());
     
 
     newOL.appendChild(newButton1);
@@ -111,14 +124,11 @@ function updateButton(){
     newOL.appendChild(newButton3);
     var parentDiv = document.getElementById(this.id).parentNode;
     parentDiv.insertBefore(newOL, document.getElementById(this.id).nextSibling);
-    //console.log(document.querySelector('editButton'));
-    //addFunctionButton();
+    document.getElementById(this.id).nextSibling.value = document.getElementById(this.id).parentNode.firstChild.value;
+    newButton1.addEventListener('click', guardar);
+    newButton2.addEventListener('click', eliminar);
+    newButton3.addEventListener('click', cancelar);
   }
-
-}
-function addFunctionButton(){
-  //console.log(document.getElementById("btn1_ol"));
-  //document.getElementById("btn1_ol").addEventListener('click',cancelar());
 
 }
 
@@ -129,17 +139,20 @@ function cancel() {
 function addElement () {
   if(document.getElementById("name").value != "") {
     var newDT = document.createElement("dt");
-    var newButton = document.createElement("button");
+    var newButton = document.createElement("input");
     var newContent = document.createTextNode(document.getElementById("name").value);
     newButton.className = "tareaButton" ;
     lastId ++;
     newButton.id = "btn" + lastId;
+    newButton.type = "button";
     newButton.appendChild(newContent);
     newDT.appendChild(newButton);
     var parentDiv = document.getElementById('dtID').parentNode;
     parentDiv.insertBefore(newDT, document.getElementById('dtID'));
     document.getElementById("name").value = null;
     modal.style.display = "none";
+    newButton.addEventListener('click', updateButton);
+
   }
 }
 
