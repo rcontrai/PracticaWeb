@@ -53,6 +53,7 @@
 
 
 <script type="text/javascript">
+var lastId = 3;
 
 var modal = document.getElementById("myModal");
 btnAccept.addEventListener('click', addElement);
@@ -122,6 +123,9 @@ function addElement () {
     var newButton = document.createElement("button");
     var newContent = document.createTextNode(document.getElementById("name").value);
     newButton.className = "tareaButton" ;
+    lastId ++;
+    newButton.id = "btn" + lastId;
+    console.log(lastId);
     newButton.appendChild(newContent);
     newDT.appendChild(newButton);
     var parentDiv = document.getElementById('dtID').parentNode;
