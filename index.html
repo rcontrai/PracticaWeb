@@ -80,34 +80,25 @@ var modal = document.getElementById("myModal");
 btnAccept.addEventListener('click', addElement);
 btnCancel.addEventListener('click', cancel);
 
-function guardar() { //marche que pour le premier button
-  var node = document.getElementsByClassName("editButton")[1].parentElement.parentElement;
-  //if (node.parentNode) {
-  //node.firstChild.value;
+function guardar() {
+  var node = this.parentElement.parentElement;
   node.firstChild.type = "button";
-  //node.firstChild.nextSibling.removeChild();
-  //var d = document.getElementById("top");
-  var node_nested = document.getElementById("btn1_ol");
+  var node_nested = this.parentElement;
   var throwawayNode = node.removeChild(node_nested);
 
 }
-function eliminar() { //marche seulement si un seul block est ouvert.
-  var node = document.getElementsByClassName("editButton")[1].parentElement.parentElement;
-  if (node.parentNode) {
+function eliminar() {
+  var node = this.parentElement.parentElement;
   node.parentNode.removeChild(node);
 }
+function cancelar() {
 
-}
-function cancelar() { //marche pour le 1
-  //console.log(document.getElementsByClassName("editButton")[2].parentElement.parentElement);
-  console.log("hey");
+  this.parentElement.parentElement.firstChild.value = this.parentNode.value;
 
-  console.log(document.getElementById("btn1_3").parentNode.value);
-  console.log(document.getElementById("btn1").value); // = document.getElementById(this.id).nextSibling;
-
-  document.getElementById("btn1").value = document.getElementById("btn1_3").parentNode.value;
-
-  guardar();
+  var node = this.parentElement.parentElement;
+  node.firstChild.type = "button";
+  var node_nested = this.parentElement;
+  var throwawayNode = node.removeChild(node_nested);
 }
 
 
