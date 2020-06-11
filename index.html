@@ -28,8 +28,9 @@
     </form>
     <dl id="tareaList">
         <dt><input id="btn1" class="tareaButton" type="button" value="tarea 1"></dt>
-        <dt><input id="btn1" class="tareaButton" type="button" value="tarea 2"></dt>
-        <dt><input id="btn1" class="tareaButton" type="button" value="tarea 3"></dt>
+        <dt><input id="btn2" class="tareaButton" type="button" value="tarea 2"></dt>
+        <dt><input id="btn3" class="tareaButton" type="button" value="tarea 3"></dt>
+        <dt id="dtID"></dt>
       </dl>
     <!-- The Modal -->
     <div id="myModal" class="modal">
@@ -60,26 +61,32 @@ var button;
 
 /*btnAccept.addEventListener('click', updateBtn);*/
 btnAccept.addEventListener('click', addElement);
-function updateBtn() { 
+btnCancel.addEventListener('click', cancel);
+/*function updateBtn() { 
     //button = tareaList.createElement("p");
     //tareaList.appendChild(button);
     
     button = tareaList.createElement("tareaButton",input, id="btn1", type="button", value="");
     //tareaList.body.appendChild(button);
     modal.style.display = "none";
+}*/
+function cancel() {
+  document.getElementById("name").value = null;
+  modal.style.display = "none";
 }
-
 function addElement () {
-  // crée un nouvel élément div
-  var newDiv = document.createElement("div");
-  // et lui donne un peu de contenu
-  var newContent = document.createTextNode('Hi there and greetings!');
-  // ajoute le nœud texte au nouveau div créé
-  newDiv.appendChild(newContent);
-  
-  // ajoute le nouvel élément créé et son contenu dans le DOM
-  var currentDiv = document.getElementById('div1');
-  document.body.insertBefore(newDiv, currentDiv);
+  if(document.getElementById("name").value != "") {
+    var newDT = document.createElement("dt");
+    var newButton = document.createElement("button");
+    var newContent = document.createTextNode(document.getElementById("name").value);
+    newButton.className = "tareaButton" ;
+    newButton.appendChild(newContent);
+    newDT.appendChild(newButton);
+    var parentDiv = document.getElementById('dtID').parentNode;
+    parentDiv.insertBefore(newDT, document.getElementById('dtID'));
+    document.getElementById("name").value = null;
+    modal.style.display = "none";
+  }
 }
 
 btn.onclick = function() {
