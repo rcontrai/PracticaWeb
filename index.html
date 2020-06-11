@@ -79,7 +79,8 @@ btnAccept.addEventListener('click', addElement);
 btnCancel.addEventListener('click', cancel);
 
 function guardar() {
-  var taskNode = this.parentElement.parentElement.firstChild;
+  var node = this.parentElement.parentElement;
+  var taskNode = node.firstChild;
   taskNode.type = "button";
   localStorage.setItem(taskNode.id,taskNode.value)
   var node_nested = this.parentElement;
