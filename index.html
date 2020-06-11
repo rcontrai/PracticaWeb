@@ -69,47 +69,56 @@ function eliminar(id) {
 
 
 }
-function cancelar(id) {
-  var wait = true;
-  console.log(document.body);
+function cancelar() {
+  console.log("hey");
   //document.getElementById(id).type = "button";
-  if(wait){
-  wait = false;
+  
   //document.getElementById(id).type = "button";
-  }
 }
+
+
+
 
 function updateButton(){
   if(this.type == "button"){
     this.type = "text";
     var newOL = document.createElement("ol");
-
+    newOL.id = this.id + "_ol";
     var newButton1 = document.createElement("button");
     var newContent = document.createTextNode("Guardar");
     newButton1.className = "editButton" ;
+    newButton1.id = this.id + "_1";
     newButton1.appendChild(newContent);
     newButton1.addEventListener('click',guardar(this.id));
 
     var newButton2 = document.createElement("button");
     var newContent = document.createTextNode("Eliminar");
     newButton2.className = "editButton" ;
+    newButton2.id = this.id + "_2";
     newButton2.appendChild(newContent);
     newButton2.addEventListener('click',eliminar(this.id));
 
     var newButton3 = document.createElement("button");
     var newContent = document.createTextNode("Cancelar");
     newButton3.className = "editButton" ;
-    newButton3.addEventListener('click',cancelar(this.id));
+    newButton3.id = this.id + "_3";
     newButton3.appendChild(newContent);
+    //newButton3.addEventListener('click',cancelar());
     
 
     newOL.appendChild(newButton1);
     newOL.appendChild(newButton2);
     newOL.appendChild(newButton3);
-
     var parentDiv = document.getElementById(this.id).parentNode;
     parentDiv.insertBefore(newOL, document.getElementById(this.id).nextSibling);
+    //console.log(document.querySelector('editButton'));
+    //addFunctionButton();
   }
+
+}
+function addFunctionButton(){
+  //console.log(document.getElementById("btn1_ol"));
+  //document.getElementById("btn1_ol").addEventListener('click',cancelar());
 
 }
 
@@ -125,7 +134,6 @@ function addElement () {
     newButton.className = "tareaButton" ;
     lastId ++;
     newButton.id = "btn" + lastId;
-    console.log(lastId);
     newButton.appendChild(newContent);
     newDT.appendChild(newButton);
     var parentDiv = document.getElementById('dtID').parentNode;
