@@ -32,12 +32,28 @@ form { /* top part*/
     text-align: center;
 }
 
-dt {
+dl {
     text-align: center;
     background-color: #5a8f5f77;
     margin-left: 5%;
     margin-right: 5%;
     min-width: 90%;
+}
+
+.editButton {
+    margin-top: -1cm;
+    margin-bottom: 0.5cm;
+    font-size: 100%;
+    width: 15%;
+    min-width: 272px;
+    background-color: rgb(68, 127, 60);
+    Color:white;
+    font-weight: bold;
+    padding: 10px 40px;
+    border-radius: 3px;
+    cursor: pointer; 
+    box-shadow: 0 8px 16px 0 grey;
+    text-decoration: none; 
 }
 
 .tareaButton {

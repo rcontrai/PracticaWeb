@@ -52,24 +52,65 @@
 
 
 <script type="text/javascript">
-var btn = document.querySelector('input');
-var tareaList = document.getElementById("tareaList");
-var txt = document.querySelector('p');
-var modal = document.getElementById("myModal");
-var span = document.getElementsByClassName("close")[0];
-var button;
 
-/*btnAccept.addEventListener('click', updateBtn);*/
+var modal = document.getElementById("myModal");
 btnAccept.addEventListener('click', addElement);
 btnCancel.addEventListener('click', cancel);
-/*function updateBtn() { 
-    //button = tareaList.createElement("p");
-    //tareaList.appendChild(button);
+btn1.addEventListener('click', updateButton);
+btn2.addEventListener('click', updateButton);
+btn3.addEventListener('click', updateButton);
+
+function guardar(id) {
+
+}
+function eliminar(id) {
+
+
+}
+function cancelar(id) {
+  var wait = true;
+  console.log(document.body);
+  //document.getElementById(id).type = "button";
+  if(wait){
+  wait = false;
+  //document.getElementById(id).type = "button";
+  }
+}
+
+function updateButton(){
+  if(this.type == "button"){
+    this.type = "text";
+    var newOL = document.createElement("ol");
+
+    var newButton1 = document.createElement("button");
+    var newContent = document.createTextNode("Guardar");
+    newButton1.className = "editButton" ;
+    newButton1.appendChild(newContent);
+    newButton1.addEventListener('click',guardar(this.id));
+
+    var newButton2 = document.createElement("button");
+    var newContent = document.createTextNode("Eliminar");
+    newButton2.className = "editButton" ;
+    newButton2.appendChild(newContent);
+    newButton2.addEventListener('click',eliminar(this.id));
+
+    var newButton3 = document.createElement("button");
+    var newContent = document.createTextNode("Cancelar");
+    newButton3.className = "editButton" ;
+    newButton3.addEventListener('click',cancelar(this.id));
+    newButton3.appendChild(newContent);
     
-    button = tareaList.createElement("tareaButton",input, id="btn1", type="button", value="");
-    //tareaList.body.appendChild(button);
-    modal.style.display = "none";
-}*/
+
+    newOL.appendChild(newButton1);
+    newOL.appendChild(newButton2);
+    newOL.appendChild(newButton3);
+
+    var parentDiv = document.getElementById(this.id).parentNode;
+    parentDiv.insertBefore(newOL, document.getElementById(this.id).nextSibling);
+  }
+
+}
+
 function cancel() {
   document.getElementById("name").value = null;
   modal.style.display = "none";
@@ -89,10 +130,10 @@ function addElement () {
   }
 }
 
-btn.onclick = function() {
+document.querySelector('input').onclick = function() {
     modal.style.display = "block";
 }
-span.onclick = function() {
+document.getElementsByClassName("close")[0].onclick = function() {
   modal.style.display = "none";
 }
 
