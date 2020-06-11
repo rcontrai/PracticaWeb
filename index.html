@@ -28,7 +28,7 @@
         <input class="firstButton" type="button" value="Añadir tarea">
     </form>
     <dl id="tareaList">
-        <!--
+        <!--This is where the tasks go. For example :
         <dt><input id="btn1" class="tareaButton" type="button" value="tarea 1"></dt>
         <dt><input id="btn2" class="tareaButton" type="button" value="tarea 2"></dt>
         <dt><input id="btn3" class="tareaButton" type="button" value="tarea 3"></dt>
@@ -158,19 +158,20 @@ function addElement () {
 function addTask (content) {
   if((content != "") && content != null) {
     var newDT = document.createElement("dt");
-    var newButton = document.createElement("button");
-    var newContent = document.createTextNode(content);
+    var newButton = document.createElement("input");
+    newButton.type = "button";
+    newButton.value = content;
     newButton.className = "tareaButton" ;
     lastId ++;
     newButton.id = "btn" + lastId;
     localStorage.setItem('lastId', lastId);
     localStorage.setItem(newButton.id, content);
     console.log("created element n°" + lastId);
-    newButton.appendChild(newContent);
+    newButton.addEventListener('click', updateButton);
     newDT.appendChild(newButton);
     var parentDiv = document.getElementById('dtID').parentNode;
     parentDiv.insertBefore(newDT, document.getElementById('dtID'));
-    newButton.addEventListener('click', updateButton);
+    
   }
 }
 
