@@ -81,14 +81,16 @@ btnAccept.addEventListener('click', addElement);
 btnCancel.addEventListener('click', cancel);
 
 function guardar() {
-  var node = this.parentElement.parentElement;
-  node.firstChild.type = "button";
+  var taskNode = this.parentElement.parentElement.firstChild;
+  taskNode.type = "button";
+  localStorage.setItem(taskNode.id,taskNode.value)
   var node_nested = this.parentElement;
   var throwawayNode = node.removeChild(node_nested);
 
 }
 function eliminar() {
   var node = this.parentElement.parentElement;
+  localStorage.removeItem(node.firstChild.id);
   node.parentNode.removeChild(node);
 }
 function cancelar() {
